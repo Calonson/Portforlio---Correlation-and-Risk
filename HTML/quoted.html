@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+    <div class="form-group">
+        One share of the {{result.name}} ({{result.symbol}}) : $ {{result.price | usd}}
+    </div>
+    <div id="3mgraph"></div>
+    
+{% endblock %}

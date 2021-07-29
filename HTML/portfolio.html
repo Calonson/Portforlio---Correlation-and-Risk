@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+      <h1>Your Portfolio</h1>
+      <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in buysum %}
+                <tr>
+                    <td>{{ record.name }}</td>
+                    <td>{{ record.symbol }}</td>
+                    <td>{{ record["SUM(shares)"] }}</td>
+                    <td>{{ record.price | usd}} </td>
+                    <td>{{ record.total | usd}} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+        <body>Risk Level is <b style={{color}}>{{risklevel}}</b>
+        <br>Recommended stock -
+        <br>Company:{{rec_name}}, Symbol:({{rec_sym}})</body>
+{% endblock %}

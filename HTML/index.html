@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Statement
+{% endblock %}
+
+{% block main %}
+<div>
+      <h1>Statement</h1>
+      <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in buysum %}
+                <tr>
+                    <td>{{ record.name }}</td>
+                    <td>{{ record.symbol }}</td>
+                    <td>{{ record["SUM(shares)"] }}</td>
+                    <td>{{ record.price | usd}} </td>
+                    <td>{{ record.total | usd}} </td>
+                </tr>
+            {% endfor %}
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Cash</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{ cash | usd}}</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Grand Total</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{ grandtotal | usd}}</td>
+                </tr>
+        </tbody>
+      </table>
+</div>
+{% endblock %}
