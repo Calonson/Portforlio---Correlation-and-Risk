@@ -1,0 +1,11 @@
+cs50
+Flask
+Flask-Session
+requests
+plotly
+pandas
+math
+numpy
+scipy.stats
+urllib.parse
+csv
